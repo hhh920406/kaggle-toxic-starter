@@ -200,7 +200,6 @@ def dpcnn(embedding_matrix, embedding_size,
           dense_size, repeat_dense, dropout_dense,
           l2_reg_convo, l2_reg_dense, use_prelu,
           trainable_embedding, use_batch_norm):
-
     """
     Note:
         Implementation of http://ai.tencent.com/ailab/media/publications/ACL3-Brady.pdf
@@ -287,6 +286,53 @@ def vdcnn(embedding_size,
     predictions = Dense(6, activation='sigmoid')(x)
     model = Model(inputs=input_text, outputs=predictions)
     return model
+
+
+def clstm(embedding_matrix, embedding_size,
+          maxlen, max_features,
+          filter_nr, kernel_size, repeat_block, dropout_convo,
+          dense_size, repeat_dense, dropout_dense,
+          l2_reg_convo, l2_reg_dense, use_prelu, trainable_embedding, use_batch_norm):
+    """
+    Implementation of https://arxiv.org/pdf/1511.08630.pdf
+    """
+    return NotImplementedError
+
+
+def lstm_att(embedding_matrix, embedding_size,
+             maxlen, max_features,
+             filter_nr, kernel_size, repeat_block, dropout_convo,
+             dense_size, repeat_dense, dropout_dense,
+             l2_reg_convo, l2_reg_dense, use_prelu, trainable_embedding, use_batch_norm):
+    """
+    Implementation of https://arxiv.org/pdf/1511.08630.pdf
+    """
+    return NotImplementedError
+
+
+def cnn_dil(embedding_matrix, embedding_size,
+            maxlen, max_features,
+            filter_nr, kernel_size, repeat_block, dropout_convo,
+            dense_size, repeat_dense, dropout_dense,
+            l2_reg_convo, l2_reg_dense, use_prelu, trainable_embedding, use_batch_norm):
+    """
+    Dilated convolutions
+    """
+    return NotImplementedError
+
+
+def hier_att_net(embedding_matrix, embedding_size,
+                 maxlen, max_features,
+                 filter_nr, kernel_size, repeat_block, dropout_convo,
+                 dense_size, repeat_dense, dropout_dense,
+                 l2_reg_convo, l2_reg_dense, use_prelu, trainable_embedding, use_batch_norm):
+    """
+    Hierarchical Attention Network
+    Implementation of https://arxiv.org/pdf/1511.08630.pdf
+    https://github.com/keras-team/keras/issues/4495
+    https://github.com/richliao/textClassifier/blob/master/textClassifierHATT.py
+    """
+    return NotImplementedError
 
 
 def _bn_relu_dropout_block(use_batch_norm, use_prelu, dropout):
