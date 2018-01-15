@@ -329,6 +329,7 @@ def hier_att_net(embedding_matrix, embedding_size,
     """
     Hierarchical Attention Network
     Implementation of https://arxiv.org/pdf/1511.08630.pdf
+    https://richliao.github.io/supervised/classification/2016/12/26/textclassifier-HATN/
     https://github.com/keras-team/keras/issues/4495
     https://github.com/richliao/textClassifier/blob/master/textClassifierHATT.py
     """
